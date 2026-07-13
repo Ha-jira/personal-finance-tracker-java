@@ -1,0 +1,23 @@
+<div class="auth-container">
+  <form class="auth-card" [formGroup]="form" (ngSubmit)="submit()">
+    <h1>Welcome back</h1>
+    <p class="auth-subtitle">Log in to your finance tracker</p>
+
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="you@example.com" />
+
+    <label>Password</label>
+    <input type="password" formControlName="password" placeholder="••••••••" />
+
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <button type="submit" [disabled]="form.invalid || loading">
+      {{ loading ? 'Logging in...' : 'Log In' }}
+    </button>
+
+    <div class="auth-links">
+      <a routerLink="/forgot-password">Forgot password?</a>
+      <a routerLink="/register">Create an account</a>
+    </div>
+  </form>
+</div>

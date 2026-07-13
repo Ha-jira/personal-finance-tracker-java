@@ -1,0 +1,160 @@
+.budgets-page {
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.page-header h1 { margin: 0; color: #1a1a2e; }
+
+.filters { display: flex; gap: 8px; align-items: center; }
+
+.filters select, .filters input {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.primary-btn {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.budget-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border-left: 4px solid #d1d5db;
+}
+
+.budget-card.safe { border-left-color: #10b981; }
+.budget-card.warning { border-left-color: #f59e0b; }
+.budget-card.over_budget { border-left-color: #ef4444; }
+
+.budget-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.category { font-weight: 700; color: #1a1a2e; }
+
+.status-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.budget-card.safe .status-tag { background: #d1fae5; color: #059669; }
+.budget-card.warning .status-tag { background: #fef3c7; color: #b45309; }
+.budget-card.over_budget .status-tag { background: #fee2e2; color: #dc2626; }
+
+.budget-amounts {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill { height: 100%; background: #10b981; border-radius: 999px; }
+
+.budget-card.warning .progress-fill { background: #f59e0b; }
+.budget-card.over_budget .progress-fill { background: #ef4444; }
+
+.delete-link {
+  border: none;
+  background: none;
+  color: #9ca3af;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.empty { text-align: center; color: #9ca3af; padding: 40px 0; }
+.error { color: #dc2626; font-size: 13px; margin-top: 10px; }
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.modal-card h2 { margin: 0 0 16px; }
+
+.modal-card label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 12px 0 6px;
+  color: #374151;
+}
+
+.modal-card input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}

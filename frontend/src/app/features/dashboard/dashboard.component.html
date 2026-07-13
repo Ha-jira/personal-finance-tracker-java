@@ -1,0 +1,38 @@
+<div class="dashboard">
+  <div class="dashboard-header">
+    <h1>Dashboard</h1>
+    <div class="filters">
+      <select [(ngModel)]="selectedMonth" (ngModelChange)="onFilterChange()">
+        <option *ngFor="let m of [1,2,3,4,5,6,7,8,9,10,11,12]" [value]="m">{{ m }}</option>
+      </select>
+      <input type="number" [(ngModel)]="selectedYear" (ngModelChange)="onFilterChange()" />
+    </div>
+  </div>
+
+  <div class="summary-cards" *ngIf="summary">
+    <div class="card income">
+      <span class="label">Total Income</span>
+      <span class="value">₹{{ summary.totalIncome | number:'1.2-2' }}</span>
+    </div>
+    <div class="card expense">
+      <span class="label">Total Expense</span>
+      <span class="value">₹{{ summary.totalExpense | number:'1.2-2' }}</span>
+    </div>
+    <div class="card savings">
+      <span class="label">Savings</span>
+      <span class="value">₹{{ summary.savings | number:'1.2-2' }}</span>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-box">
+      <h3>Category-wise Expenses</h3>
+      <canvas #categoryChart></canvas>
+      <p class="empty" *ngIf="categoryBreakdown.length === 0">No expenses recorded for this month yet.</p>
+    </div>
+    <div class="chart-box">
+      <h3>Monthly Trend ({{ selectedYear }})</h3>
+      <canvas #trendChart></canvas>
+    </div>
+  </div>
+</div>

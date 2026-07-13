@@ -1,0 +1,13 @@
+<nav class="navbar" *ngIf="authService.isLoggedIn()">
+  <div class="navbar-brand">💰 Finance Tracker</div>
+  <div class="navbar-links">
+    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    <a routerLink="/transactions" routerLinkActive="active">Transactions</a>
+    <a routerLink="/budgets" routerLinkActive="active">Budgets</a>
+    <a routerLink="/reports" routerLinkActive="active">Reports</a>
+  </div>
+  <div class="navbar-user">
+    <span>Hi, {{ authService.getUserName() }}</span>
+    <button (click)="logout()">Logout</button>
+  </div>
+</nav>
