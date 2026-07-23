@@ -35,7 +35,6 @@ personal-finance-tracker/
 1. In a terminal: `cd frontend && npm install && npm start`
 2. App runs at `http://localhost:4200`.
 
-Full step-by-step instructions (installing tools, running, testing, pushing to GitHub) were provided in chat alongside this project.
 
 ## API Endpoints
 
